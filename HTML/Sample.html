@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML with Flex Sample by swfobject</title>
+        <meta charset="UTF-8">
+        <script src="../js/lib/jquery.js"></script>
+        <script src="../js/lib/swfobject.js"></script>
+        <script>
+            $(function(){
+                var flashVars = {message:'hello flex!'};
+                swfobject.embedSWF("../Flex/swf/Sample.swf", 'result', 
+                '300', '200', '10.0.0', '', flashVars);
+                $("#sendBtn").click(function(){
+                    var msg = $("#message").val();
+                    var flashVars= {message: msg};
+                    swfobject.embedSWF("../Flex/swf/Sample.swf", 'result', 
+                        '300', '200', '10.0.0', '', flashVars); 
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <label>Message:</label>
+            <input type="text" id="message" />
+            <input type="button" id="sendBtn" value="send message to Flex" />
+        </div>
+        <div style="width:320px; padding-left:10px; background-color: aqua;">
+            <label>Flex comes here</label>
+            <output id="result"></output>
+        </div>
+    </body>
+</html>
